@@ -100,7 +100,7 @@ def record_history():
 
 def add_to_total():
     text = st.session_state.input_text
-    matches = re.findall(r"(\S+)\s*([\d]*\.?\d+)", text)
+    matches = re.findall(r"(\S+)\s*(-?[\d]+(?:\.[\d]+)?)", text)
     if not matches:
         st.warning("❗ 未检测到 code+数量，请检查格式")
         return
